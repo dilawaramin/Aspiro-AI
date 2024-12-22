@@ -1,6 +1,7 @@
 import os
 import openai 
 from dotenv import load_dotenv
+from gpt_utils import store_message_json
 
 
 
@@ -34,21 +35,25 @@ def create_gpt_message(userName, model=MODEL, max_tokens=100):
                     "content": [
                         {
                         "type": "text",
-                        "text": "Give me a test message"
+                        "text": "Give me a 50 word motivational text message"
                         },
                     ]
                 }   
             ]
         )
+        print(response)
         
-        return response.choices[0].message
+        return response
     
     except Exception as e:
         print(e)
         return f"Error: {e}"
     
+
     
     
 # testing
 if __name__ == "__main__":
-    print(create_gpt_message("Test User"))
+    response = create_gpt_message("Test User")
+    
+    store_message_json(response)
