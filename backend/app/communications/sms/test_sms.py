@@ -2,15 +2,16 @@ from sms_utils import format_phone_number
 from sms_service import SMSService
 
 
-phone_number = input("Enter the Phone number to test with: ")
-something = format_phone_number(phone_number)
+# phone_number = input("Enter the Phone number to test with: ")
+# something = format_phone_number(phone_number)
 
-print("The returned phone number from format_phone_number method is: ", something)
+# print("The returned phone number from format_phone_number method is: ", something)
 
 
 
 # Define the recipient's phone number and the message
-recipient_phone = "+1234567890"  # Replace with the recipient's phone number
+recipient_phone_unformated = input("Enter the phone number to send the test message to:") # Replace with the recipient's phone number
+recipient_phone = format_phone_number(recipient_phone_unformated)
 message_content = "Hello! This is a test message from SMSService."
 
 
