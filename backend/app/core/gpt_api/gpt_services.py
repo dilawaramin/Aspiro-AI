@@ -31,6 +31,10 @@ def create_gpt_message(userName, model=MODEL, max_tokens=100):
             temperature = 0.6,
             messages=[
                 {
+                    "role": "system",
+                    "content": "."
+                },
+                {
                     "role": "user",
                     "content": [
                         {
@@ -39,7 +43,7 @@ def create_gpt_message(userName, model=MODEL, max_tokens=100):
                         },
                     ]
                 }   
-            ]
+            ],
         )
         print(response)
         
