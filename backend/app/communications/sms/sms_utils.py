@@ -1,10 +1,19 @@
 # Path: app/communications/sms/sms_utils.py
-
 import re
+
+
+def user_validation():
+    """Validate if text is from a valid user.
+    """
+
+    
+    return
+
 
 def format_phone_number(phone_number: str) -> str:
     """Standardize phone number format for SMS sending."""
     return re.sub(r'\D', '', phone_number)  # Remove non-numeric chars
+
 
 def log_sms_error(phone_number: str, error_message: str):
     """Log SMS errors for troubleshooting."""
