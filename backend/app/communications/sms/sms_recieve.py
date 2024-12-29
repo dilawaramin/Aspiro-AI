@@ -1,14 +1,13 @@
 import os
 from dotenv import load_dotenv
-from flask import Flask, request, redirect
+from flask import Flask, request, redirect, Blueprint
 from twilio.twiml.messaging_response import MessagingResponse
 
 # setup flask app (?)
-app = Flask(__name__)
-load_dotenv()
-ROOT_HOST = os.getenv("ROOT_DOMAIN")
+sms_blueprint = Blueprint('sms', __name__)
 
-@app.route("/communications/sms", methods=['GET', 'POST'])
+
+@sms_blueprint.route("/sms", methods=['GET', 'POST'])
 def incoming_sms():
     """Send a dynamic reply to an incoming text message"""
     # Get the message the user sent our Twilio number
@@ -20,9 +19,3 @@ def incoming_sms():
 
     # returns empty TwiML response
     return str(resp)
-
-# testing
-if __name__ == "__main__":
-    app.run(port=3000, debug=True)
-    
-    
