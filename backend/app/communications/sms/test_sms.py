@@ -1,5 +1,5 @@
 from sms_utils import format_phone_number
-from sms_service import SMSService
+from backend.app.communications.sms.sms_send import SMSService
 
 
 # phone_number = input("Enter the Phone number to test with: ")

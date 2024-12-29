@@ -1,4 +1,4 @@
-# Path: app/communications/sms/sms_service.py
+# Path: app/communications/sms/sms_send.py
 import os
 from dotenv import load_dotenv
 
