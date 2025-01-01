@@ -1,12 +1,9 @@
-# Path: app/communications/sms/sms_service.py
+# Path: app/communications/sms/sms_send.py
 import os
 from dotenv import load_dotenv
-
-load_dotenv() 
-# need the api for this
 from twilio.rest import Client
-
 from sms_utils import format_phone_number, log_sms_error
+
 
 # Load environment variables (e.g., API keys)
 load_dotenv() 
