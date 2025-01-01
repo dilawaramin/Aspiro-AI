@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+       --color-slate-400: theme("colors.slate.400"); 
+       --color-gray-300: theme("colors.gray.300"); 
+       --color-blue-300: theme("colors.blue.300"); 
+       --color-sky-300: theme("colors.sky.300"); 
+       --color-gray-950: theme("colors.gray.950"); 
+    }
+
+    .absolute-center {
+        @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+    }
+}
