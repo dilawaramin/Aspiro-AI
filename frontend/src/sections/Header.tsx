@@ -4,6 +4,7 @@ import { Button, ButtonProps } from "@/components/Button";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import { Orbit } from '@/components/Orbit';
+import Login from '@/sections/Login';
 
 export const navItems = [
   {
@@ -34,6 +35,7 @@ export const loginItems = [
 
 export const Header = () => {
   const [isMobileNavOpen, setIsMovileNavOpen] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
   return (
     <> 
       <header className="border-b border-gray-200/20 relative z-40"> 
@@ -59,9 +61,17 @@ export const Header = () => {
           <div className="hidden lg:flex">
             {loginItems.map(({ buttonVariant, name, href }) => (
               <a href={href} key={name}>
-              <Button variant={buttonVariant}>{name}</Button>
-              </a>
+<Button 
+  onClick={() => {
+    console.log("Button clicked");
+    setShowLogin(true);
+  }} 
+  variant={buttonVariant}
+>
+  {name}
+</Button>              </a>
             ))}
+            {showLogin && <Login onClose={() => setShowLogin(false)}/>}
           </div>
           <div className="flex items-center lg:hidden">
             <button className="size-10 rounded-lg border-2 [background:linear-gradient(var(--color-gray-950),var(--color-gray-950))_content-box,conic-gradient(var(--color-slate-400),var(--color-gray-300),var(--color-blue-300),var(--color-sky-300),var(--color-slate-400))_border-box] relative" onClick={() => setIsMovileNavOpen(!isMobileNavOpen)}>
