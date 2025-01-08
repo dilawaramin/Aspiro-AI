@@ -23,6 +23,13 @@ const classes = cva('text-xs tracking-widest uppercase font-bold h-10 px-6 round
   });
 
 export const Button = (props: ButtonProps) => {
-    const { className = '', children, ...otherProps } = props;
-    return <button className={classes({ ...otherProps, className })}>{children}</button>
+  const { className = '', variant, block, children, ...otherProps } = props;
+  return (
+        <button
+          className={`${classes({ variant, block })} ${className}`}
+          {...otherProps} // Ensure all additional props like `onClick` are passed correctly.
+        >
+          {children}
+        </button>
+    );
 };
