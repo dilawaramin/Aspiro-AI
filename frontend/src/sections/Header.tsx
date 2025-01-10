@@ -36,7 +36,7 @@ export const Header = () => {
   const [isMobileNavOpen, setIsMovileNavOpen] = useState(false);
   return (
     <> 
-      <header className="border-b border-gray-200/20 relative z-40"> 
+      <header className="border-b border-gray-200/20 z-40 sticky top-0"> 
       <div className="container">
         <div className="h-18 lg:h-20 flex justify-between items-center">
           <div className="flex gap-4 items-center">
